@@ -1,0 +1,10 @@
+@import url('./src/styles/foundation.css');
+@import url('./src/styles/hero.css');
+@import url('./src/styles/services.css');
+@import url('./src/styles/trust.css');
+@import url('./src/styles/testimonials.css');
+
+:root { color-scheme: light; }
+body { margin: 0; background: #f7fbfa; }
+.site-footer { padding: 2rem 1.5rem; text-align: center; color: #53706d; font-size: .9rem; }
+.component-error { max-width: 70rem; margin: 2rem auto; padding: 1rem; color: #9b3f3f; }
