@@ -1,0 +1,622 @@
+/* ==========================================================================
+   LUMEN DENTAL STUDIO — TRUST & CREDENTIALS COMPONENT STYLES
+   Scoped strictly to .lumen-trust to avoid style bleeding.
+   ========================================================================== */
+
+.lumen-trust {
+  --trust-primary: #125e68;
+  --trust-primary-dark: #0d3b42;
+  --trust-accent: #c29d59;
+  --trust-accent-light: #fbf6ec;
+  --trust-sage: #4e8777;
+  --trust-sage-light: #eef6f3;
+  --trust-slate: #1a242c;
+  --trust-muted: #536471;
+  --trust-border: #d9e3e7;
+  --trust-surface: #ffffff;
+  --trust-bg-alt: #f4f8f8;
+  --trust-radius-sm: 8px;
+  --trust-radius-md: 14px;
+  --trust-radius-lg: 20px;
+  --trust-radius-full: 9999px;
+  --trust-shadow-sm: 0 2px 8px rgba(13, 59, 66, 0.05);
+  --trust-shadow-md: 0 8px 24px rgba(13, 59, 66, 0.08);
+  --trust-shadow-lg: 0 16px 36px rgba(13, 59, 66, 0.12);
+  --trust-transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+
+  display: block;
+  width: 100%;
+  background-color: var(--trust-bg-alt);
+  color: var(--trust-slate);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  padding: clamp(3.5rem, 7vw, 6.5rem) 1.25rem;
+  box-sizing: border-box;
+}
+
+.lumen-trust *,
+.lumen-trust *::before,
+.lumen-trust *::after {
+  box-sizing: border-box;
+}
+
+/* Container */
+.lumen-trust .trust-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.lumen-trust .trust-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.lumen-trust .trust-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--trust-sage-light);
+  color: var(--trust-sage);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.375rem 0.9rem;
+  border-radius: var(--trust-radius-full);
+  margin-bottom: 1rem;
+  border: 1px solid rgba(78, 135, 119, 0.2);
+}
+
+.lumen-trust .icon-shield {
+  color: var(--trust-sage);
+}
+
+.lumen-trust .trust-headline {
+  font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.22;
+  color: var(--trust-primary-dark);
+  letter-spacing: -0.025em;
+  margin: 0 0 1rem;
+}
+
+.lumen-trust .trust-subheadline {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--trust-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Metrics Strip */
+.lumen-trust .trust-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+
+@media (min-width: 900px) {
+  .lumen-trust .trust-metrics-strip {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.lumen-trust .metric-card {
+  background-color: var(--trust-surface);
+  border: 1px solid var(--trust-border);
+  border-radius: var(--trust-radius-md);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  text-align: center;
+  box-shadow: var(--trust-shadow-sm);
+  transition: var(--trust-transition);
+}
+
+.lumen-trust .metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--trust-shadow-md);
+  border-color: var(--trust-primary);
+}
+
+.lumen-trust .metric-value {
+  display: block;
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--trust-primary-dark);
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.lumen-trust .metric-label {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--trust-slate);
+  margin-bottom: 0.25rem;
+}
+
+.lumen-trust .metric-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--trust-muted);
+}
+
+/* Pillars Grid */
+.lumen-trust .trust-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  .lumen-trust .trust-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .lumen-trust .trust-pillars-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.lumen-trust .pillar-card {
+  background-color: var(--trust-surface);
+  border: 1px solid var(--trust-border);
+  border-radius: var(--trust-radius-lg);
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  box-shadow: var(--trust-shadow-md);
+  display: flex;
+  flex-direction: column;
+  transition: var(--trust-transition);
+}
+
+.lumen-trust .pillar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--trust-shadow-lg);
+  border-color: rgba(18, 94, 104, 0.3);
+}
+
+.lumen-trust .pillar-icon-box {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--trust-radius-md);
+  background-color: var(--trust-bg-alt);
+  color: var(--trust-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.lumen-trust .pillar-card:nth-child(1) .pillar-icon-box {
+  background-color: #e8f5f6;
+  color: var(--trust-primary);
+}
+
+.lumen-trust .pillar-card:nth-child(2) .pillar-icon-box {
+  background-color: var(--trust-accent-light);
+  color: #a07a30;
+}
+
+.lumen-trust .pillar-card:nth-child(3) .pillar-icon-box {
+  background-color: var(--trust-sage-light);
+  color: var(--trust-sage);
+}
+
+.lumen-trust .pillar-card:nth-child(4) .pillar-icon-box {
+  background-color: #f7ecfa;
+  color: #7b2c94;
+}
+
+.lumen-trust .pillar-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--trust-primary-dark);
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
+
+.lumen-trust .pillar-desc {
+  font-size: 0.875rem;
+  color: var(--trust-muted);
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+.lumen-trust .pillar-checklist {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lumen-trust .pillar-checklist li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.8125rem;
+  color: var(--trust-slate);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.lumen-trust .pillar-checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--trust-sage);
+  font-weight: 800;
+}
+
+/* Credentials Section */
+.lumen-trust .trust-credentials-section {
+  background-color: var(--trust-surface);
+  border: 1px solid var(--trust-border);
+  border-radius: var(--trust-radius-lg);
+  padding: clamp(2rem, 4vw, 3rem);
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+  box-shadow: var(--trust-shadow-sm);
+}
+
+.lumen-trust .credentials-heading {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  text-align: center;
+  color: var(--trust-primary-dark);
+  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.lumen-trust .credentials-badges-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 600px) and (max-width: 991px) {
+  .lumen-trust .credentials-badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .lumen-trust .credentials-badges-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.lumen-trust .credential-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--trust-bg-alt);
+  border: 1px solid var(--trust-border);
+  border-radius: var(--trust-radius-md);
+  transition: var(--trust-transition);
+}
+
+.lumen-trust .credential-badge:hover {
+  background-color: #ffffff;
+  border-color: var(--trust-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--trust-shadow-sm);
+}
+
+.lumen-trust .badge-acronym {
+  background-color: var(--trust-primary-dark);
+  color: var(--trust-surface);
+  font-weight: 800;
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--trust-radius-sm);
+  min-width: 52px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.lumen-trust .badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.lumen-trust .badge-text strong {
+  font-size: 0.875rem;
+  color: var(--trust-primary-dark);
+  line-height: 1.3;
+}
+
+.lumen-trust .badge-text span {
+  font-size: 0.75rem;
+  color: var(--trust-muted);
+}
+
+/* Insurance & Financing Dual Module */
+.lumen-trust .trust-finance-module {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+@media (min-width: 900px) {
+  .lumen-trust .trust-finance-module {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.lumen-trust .finance-block {
+  background-color: var(--trust-surface);
+  border: 1px solid var(--trust-border);
+  border-radius: var(--trust-radius-lg);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  box-shadow: var(--trust-shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.lumen-trust .membership-block {
+  border-color: rgba(194, 157, 89, 0.4);
+  background: linear-gradient(180deg, #ffffff 0%, #fdfbf7 100%);
+  position: relative;
+}
+
+.lumen-trust .finance-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.lumen-trust .finance-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--trust-radius-md);
+  background-color: #e8f5f6;
+  color: var(--trust-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lumen-trust .highlight-icon {
+  background-color: var(--trust-accent-light);
+  color: var(--trust-accent);
+}
+
+.lumen-trust .membership-badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #a07a30;
+  background-color: var(--trust-accent-light);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--trust-radius-full);
+  margin-bottom: 0.25rem;
+}
+
+.lumen-trust .finance-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--trust-primary-dark);
+  margin: 0;
+}
+
+.lumen-trust .finance-subtitle {
+  font-size: 0.8125rem;
+  color: var(--trust-muted);
+  margin: 0.15rem 0 0;
+}
+
+.lumen-trust .finance-copy {
+  font-size: 0.9375rem;
+  color: var(--trust-slate);
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+/* Insurance Tags */
+.lumen-trust .insurance-tags-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.lumen-trust .insurance-tag {
+  background-color: var(--trust-bg-alt);
+  border: 1px solid var(--trust-border);
+  color: var(--trust-primary-dark);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--trust-radius-full);
+  transition: var(--trust-transition);
+}
+
+.lumen-trust .insurance-tag:hover {
+  background-color: var(--trust-primary);
+  color: var(--trust-surface);
+  border-color: var(--trust-primary);
+}
+
+.lumen-trust .insurance-callout {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background-color: #eef6f7;
+  border-radius: var(--trust-radius-md);
+  font-size: 0.8125rem;
+  color: var(--trust-primary-dark);
+  font-weight: 500;
+}
+
+.lumen-trust .insurance-callout svg {
+  color: var(--trust-primary);
+  flex-shrink: 0;
+}
+
+/* Membership Perks */
+.lumen-trust .membership-perks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.lumen-trust .membership-perks-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--trust-slate);
+  line-height: 1.45;
+}
+
+.lumen-trust .membership-perks-list li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: var(--trust-accent);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.lumen-trust .financing-partners-bar {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--trust-border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lumen-trust .partners-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--trust-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lumen-trust .partners-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lumen-trust .partner-item {
+  background-color: var(--trust-surface);
+  border: 1px solid var(--trust-border);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--trust-primary-dark);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--trust-radius-sm);
+}
+
+/* Safety Guarantee Banner */
+.lumen-trust .trust-safety-banner {
+  background: linear-gradient(135deg, #0d3b42 0%, #154c54 100%);
+  color: var(--trust-surface);
+  border-radius: var(--trust-radius-lg);
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  box-shadow: var(--trust-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 860px) {
+  .lumen-trust .trust-safety-banner {
+    flex-direction: row;
+  }
+}
+
+.lumen-trust .safety-banner-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.lumen-trust .safety-icon-large {
+  color: var(--trust-accent);
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.5rem;
+  border-radius: var(--trust-radius-md);
+}
+
+.lumen-trust .safety-text {
+  max-width: 720px;
+}
+
+.lumen-trust .safety-heading {
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.lumen-trust .safety-description {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.lumen-trust .safety-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  background-color: var(--trust-accent);
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--trust-radius-md);
+  text-decoration: none;
+  transition: var(--trust-transition);
+}
+
+.lumen-trust .safety-btn:hover,
+.lumen-trust .safety-btn:focus-visible {
+  background-color: #d6b06c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(194, 157, 89, 0.4);
+  outline: none;
+}
+
+/* Accessibility: Focus Visible States */
+.lumen-trust a:focus-visible,
+.lumen-trust button:focus-visible {
+  outline: 3px solid var(--trust-primary);
+  outline-offset: 2px;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .lumen-trust,
+  .lumen-trust *,
+  .lumen-trust *::before,
+  .lumen-trust *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
