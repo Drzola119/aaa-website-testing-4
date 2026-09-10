@@ -1,0 +1,582 @@
+/* ==========================================================================
+   LUMEN DENTAL STUDIO - HERO SECTION STYLES
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-16);
+  background: 
+    radial-gradient(circle at 85% 15%, rgba(46, 196, 182, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 10% 75%, rgba(255, 107, 107, 0.08) 0%, transparent 40%),
+    linear-gradient(180deg, var(--color-ivory-50) 0%, var(--color-ivory-100) 100%);
+  overflow: hidden;
+}
+
+/* Ambient Background Blur Disks */
+.hero-ambient-glow {
+  position: absolute;
+  border-radius: var(--radius-full);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: var(--z-negative);
+  opacity: 0.6;
+}
+
+.hero-ambient-glow--mint {
+  top: 5%;
+  right: -5%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(46, 196, 182, 0.25) 0%, rgba(46, 196, 182, 0) 70%);
+}
+
+.hero-ambient-glow--coral {
+  bottom: 0%;
+  left: 20%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.15) 0%, rgba(255, 107, 107, 0) 70%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: var(--space-10);
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Content (Left Column)
+   -------------------------------------------------------------------------- */
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  z-index: var(--z-normal);
+}
+
+/* Eyebrow Pill */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--color-white);
+  border: 1px solid rgba(46, 196, 182, 0.35);
+  box-shadow: var(--shadow-sm);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-navy-900);
+  align-self: flex-start;
+}
+
+.hero-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-mint-500);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 0 3px rgba(46, 196, 182, 0.25);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+/* Hero Title */
+.hero-title {
+  font-family: var(--font-family-serif);
+  font-size: clamp(2.35rem, 4.2vw, 3.75rem);
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.12;
+  color: var(--color-navy-950);
+  letter-spacing: -0.02em;
+}
+
+.hero-title-accent {
+  background: linear-gradient(135deg, var(--color-navy-900) 0%, var(--color-mint-700) 50%, var(--color-mint-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.hero-title-highlight {
+  position: relative;
+  white-space: nowrap;
+  color: var(--color-navy-950);
+}
+
+.hero-title-highlight::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  bottom: 8%;
+  width: 104%;
+  height: 12px;
+  background-color: rgba(46, 196, 182, 0.28);
+  border-radius: var(--radius-sm);
+  z-index: var(--z-negative);
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-body);
+  max-width: 580px;
+}
+
+/* Hero CTA Button Actions */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding-top: var(--space-2);
+}
+
+.hero-btn-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  transition: transform var(--transition-fast);
+}
+
+.btn-primary:hover .hero-btn-icon {
+  transform: translateX(3px);
+}
+
+.hero-guarantee {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+  margin-top: calc(var(--space-2) * -1);
+}
+
+/* Trust Proof & Social Proof Bar */
+.hero-trust-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border-subtle);
+  margin-top: var(--space-2);
+}
+
+.hero-rating-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.hero-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #F59E0B;
+}
+
+.hero-star-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
+}
+
+.hero-rating-text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-navy-900);
+}
+
+.hero-rating-text strong {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-navy-950);
+}
+
+.hero-rating-text span {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-normal);
+}
+
+.hero-features-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.hero-feature-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-navy-800);
+}
+
+.hero-chip-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--color-mint-600);
+  background-color: var(--color-mint-100);
+  border-radius: var(--radius-full);
+  padding: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Visual Composition (Right Column)
+   -------------------------------------------------------------------------- */
+
+.hero-visual-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+}
+
+/* Main Studio Glass Showcase Card */
+.hero-showcase-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 244, 236, 0.82) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl), 0 0 0 1px rgba(12, 24, 43, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: var(--space-8);
+  overflow: hidden;
+  z-index: 2;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.hero-showcase-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 50px rgba(12, 24, 43, 0.16), var(--shadow-glow-mint);
+}
+
+/* Decorative Studio Radial Rings */
+.studio-visual-rings {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.ring-circle {
+  position: absolute;
+  border-radius: var(--radius-full);
+  border: 1px dashed rgba(46, 196, 182, 0.35);
+}
+
+.ring-circle--1 { width: 340px; height: 340px; animation: rotateSlow 40s linear infinite; }
+.ring-circle--2 { width: 240px; height: 240px; border-style: solid; border-color: rgba(46, 196, 182, 0.15); }
+.ring-circle--3 { width: 140px; height: 140px; border-color: rgba(255, 107, 107, 0.2); }
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Central Tooth & Laser Crest SVG Visual */
+.hero-crest-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-tooth-svg {
+  width: 170px;
+  height: 170px;
+  filter: drop-shadow(0 12px 24px rgba(46, 196, 182, 0.35));
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.hero-crest-badge {
+  margin-top: var(--space-4);
+  background: var(--color-navy-900);
+  color: var(--color-ivory-50);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid rgba(46, 196, 182, 0.4);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-crest-badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-mint-400);
+  border-radius: var(--radius-full);
+}
+
+.hero-crest-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  width: 100%;
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(12, 24, 43, 0.08);
+}
+
+.hero-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-stat-number {
+  font-family: var(--font-family-serif);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-navy-950);
+  line-height: 1;
+}
+
+.hero-stat-number span {
+  color: var(--color-mint-600);
+  font-size: var(--font-size-md);
+}
+
+.hero-stat-label {
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+  margin-top: var(--space-1);
+}
+
+/* --------------------------------------------------------------------------
+   Floating Ambient Feature Cards (Layered on visual)
+   -------------------------------------------------------------------------- */
+
+.hero-floating-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  padding: var(--space-3) var(--space-4);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hero-floating-card:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Top-Left: Live Booking Availability */
+.floating-card--availability {
+  top: -10px;
+  left: -25px;
+  border-left: 3.5px solid var(--color-mint-500);
+}
+
+.availability-icon-wrapper {
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: var(--color-mint-100);
+  color: var(--color-mint-700);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.availability-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.availability-status {
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-mint-700);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.availability-pulse {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-mint-500);
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+.availability-time {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-navy-950);
+}
+
+/* Bottom-Right: Patient Testimonial Quote */
+.floating-card--review {
+  bottom: -15px;
+  right: -20px;
+  max-width: 270px;
+  background: linear-gradient(135deg, var(--color-navy-950) 0%, var(--color-navy-900) 100%);
+  color: var(--color-ivory-50);
+  border: 1px solid rgba(46, 196, 182, 0.3);
+  box-shadow: 0 16px 36px rgba(7, 14, 26, 0.28);
+}
+
+.review-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-mint-500) 0%, var(--color-coral-500) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  font-size: var(--font-size-xs);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.review-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.review-quote {
+  font-size: 0.75rem;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-ivory-100);
+}
+
+.review-author {
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-mint-300);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE MEDIA QUERIES (Hero Section)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .hero-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    align-self: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-guarantee {
+    justify-content: center;
+  }
+
+  .hero-trust-bar {
+    align-items: center;
+  }
+
+  .hero-features-list {
+    justify-content: center;
+  }
+
+  .hero-visual-wrapper {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-12);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-showcase-frame {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .hero-tooth-svg {
+    width: 130px;
+    height: 130px;
+  }
+
+  .floating-card--availability {
+    top: -20px;
+    left: 0;
+  }
+
+  .floating-card--review {
+    bottom: -20px;
+    right: 0;
+    max-width: 240px;
+  }
+
+  .hero-features-list {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+}

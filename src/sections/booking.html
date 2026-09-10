@@ -1,0 +1,609 @@
+<!-- ==========================================================================
+   LUMEN DENTAL STUDIO - APPOINTMENT BOOKING SECTION
+   Accessible, Mobile-First, Zero-Dependency Dental Booking Interface
+   ========================================================================== -->
+<section id="booking" class="lds-booking-section" aria-labelledby="booking-section-title">
+  <div class="lds-container">
+    
+    <!-- Section Header -->
+    <header class="lds-booking-header">
+      <div class="lds-badge">
+        <svg class="lds-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span>Seamless Scheduling</span>
+      </div>
+      <h2 id="booking-section-title" class="lds-booking-title">Reserve Your Studio Experience</h2>
+      <p class="lds-booking-subtitle">
+        Book your visit in under two minutes. Experience personalized, gentle, and modern dentistry in an environment designed for your comfort.
+      </p>
+    </header>
+
+    <!-- Main Booking Card / Flow -->
+    <div class="lds-booking-card" id="booking-card-wrapper">
+
+      <!-- Form Error Summary Banner (Screen Readers + Visual) -->
+      <div id="booking-error-summary" class="lds-alert lds-alert--error" role="alert" aria-live="assertive" tabindex="-1" hidden>
+        <div class="lds-alert__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+        </div>
+        <div class="lds-alert__content">
+          <h3 class="lds-alert__title">Please complete the required fields below</h3>
+          <ul id="booking-error-list" class="lds-alert__list"></ul>
+        </div>
+      </div>
+
+      <!-- Booking Form -->
+      <form id="lumen-booking-form" class="lds-form" novalidate aria-label="Lumen Dental Studio Appointment Reservation">
+        
+        <!-- STEP 1: SERVICE SELECTION -->
+        <fieldset class="lds-form-step">
+          <legend class="lds-step-legend">
+            <span class="lds-step-number" aria-hidden="true">1</span>
+            <span class="lds-step-heading">
+              <span class="lds-step-title">Select Treatment or Service</span>
+              <span class="lds-step-desc">Choose the primary reason for your visit today.</span>
+            </span>
+          </legend>
+
+          <div class="lds-service-grid" role="radiogroup" aria-labelledby="service-group-label" id="service-options-group">
+            <span id="service-group-label" class="sr-only">Available Dental Services</span>
+
+            <!-- Service Option 1 -->
+            <label class="lds-service-card" for="service-clean-exam">
+              <input type="radio" name="service" id="service-clean-exam" value="Comprehensive Exam & Hygiene Clean" class="sr-only lds-service-radio" checked required>
+              <div class="lds-service-card__body">
+                <div class="lds-service-card__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                  </svg>
+                </div>
+                <div class="lds-service-card__info">
+                  <h4 class="lds-service-card__name">Comprehensive Exam & Hygiene Clean</h4>
+                  <p class="lds-service-card__details">Digital 3D scans, gentle ultrasonic cleaning & oral cancer screening.</p>
+                </div>
+                <div class="lds-service-card__meta">
+                  <span class="lds-tag">60 min</span>
+                  <span class="lds-price-tag">From $190</span>
+                </div>
+              </div>
+              <div class="lds-service-card__indicator" aria-hidden="true"></div>
+            </label>
+
+            <!-- Service Option 2 -->
+            <label class="lds-service-card" for="service-whitening">
+              <input type="radio" name="service" id="service-whitening" value="Studio Laser Teeth Whitening" class="sr-only lds-service-radio">
+              <div class="lds-service-card__body">
+                <div class="lds-service-card__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <div class="lds-service-card__info">
+                  <h4 class="lds-service-card__name">Studio Laser Teeth Whitening</h4>
+                  <p class="lds-service-card__details">In-chair LED enamel-safe brightening up to 8 shades in 45 minutes.</p>
+                </div>
+                <div class="lds-service-card__meta">
+                  <span class="lds-tag">50 min</span>
+                  <span class="lds-price-tag">From $350</span>
+                </div>
+              </div>
+              <div class="lds-service-card__indicator" aria-hidden="true"></div>
+            </label>
+
+            <!-- Service Option 3 -->
+            <label class="lds-service-card" for="service-invisalign">
+              <input type="radio" name="service" id="service-invisalign" value="Invisalign & Clear Aligners Consultation" class="sr-only lds-service-radio">
+              <div class="lds-service-card__body">
+                <div class="lds-service-card__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                    <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                  </svg>
+                </div>
+                <div class="lds-service-card__info">
+                  <h4 class="lds-service-card__name">Invisalign & Aligners Consultation</h4>
+                  <p class="lds-service-card__details">Complimentary iTero 3D smile simulator & custom orthodontic treatment plan.</p>
+                </div>
+                <div class="lds-service-card__meta">
+                  <span class="lds-tag">45 min</span>
+                  <span class="lds-price-tag">Free Consult</span>
+                </div>
+              </div>
+              <div class="lds-service-card__indicator" aria-hidden="true"></div>
+            </label>
+
+            <!-- Service Option 4 -->
+            <label class="lds-service-card" for="service-restorative">
+              <input type="radio" name="service" id="service-restorative" value="Restorative Dentistry & Veneers" class="sr-only lds-service-radio">
+              <div class="lds-service-card__body">
+                <div class="lds-service-card__icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <div class="lds-service-card__info">
+                  <h4 class="lds-service-card__name">Restorative Dentistry & Veneers</h4>
+                  <p class="lds-service-card__details">Porcelain veneers, tooth-colored restorations, bonding & precision crowns.</p>
+                </div>
+                <div class="lds-service-card__meta">
+                  <span class="lds-tag">60 min</span>
+                  <span class="lds-price-tag">Custom Plan</span>
+                </div>
+              </div>
+              <div class="lds-service-card__indicator" aria-hidden="true"></div>
+            </label>
+
+            <!-- Service Option 5 -->
+            <label class="lds-service-card" for="service-emergency">
+              <input type="radio" name="service" id="service-emergency" value="Urgent Dental & Tooth Pain Assessment" class="sr-only lds-service-radio">
+              <div class="lds-service-card__body">
+                <div class="lds-service-card__icon lds-service-card__icon--emergency">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                </div>
+                <div class="lds-service-card__info">
+                  <h4 class="lds-service-card__name">Urgent Dental Assessment</h4>
+                  <p class="lds-service-card__details">Same-day priority pain relief, chipped tooth triage, or infection control.</p>
+                </div>
+                <div class="lds-service-card__meta">
+                  <span class="lds-tag lds-tag--urgent">Same Day</span>
+                  <span class="lds-price-tag">Priority Care</span>
+                </div>
+              </div>
+              <div class="lds-service-card__indicator" aria-hidden="true"></div>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- STEP 2: DOCTOR & DATE / TIME PREFERENCES -->
+        <fieldset class="lds-form-step">
+          <legend class="lds-step-legend">
+            <span class="lds-step-number" aria-hidden="true">2</span>
+            <span class="lds-step-heading">
+              <span class="lds-step-title">Date & Time Preferences</span>
+              <span class="lds-step-desc">Pick your preferred practitioner and optimal appointment window.</span>
+            </span>
+          </legend>
+
+          <div class="lds-grid lds-grid--2col">
+            <!-- Provider Preference -->
+            <div class="lds-form-field">
+              <label for="booking-provider" class="lds-label">
+                Preferred Doctor / Specialist
+                <span class="lds-required" aria-hidden="true">*</span>
+              </label>
+              <div class="lds-select-wrapper">
+                <select id="booking-provider" name="provider" class="lds-select" required aria-required="true">
+                  <option value="Next Available Dental Specialist">Next Available Dental Specialist</option>
+                  <option value="Dr. Elena Vance (Lead Aesthetic Dentist)">Dr. Elena Vance — Lead Aesthetic & Cosmetic Dentist</option>
+                  <option value="Dr. Marcus Lin (Orthodontics & Implants)">Dr. Marcus Lin — Orthodontics & Implant Specialist</option>
+                  <option value="Dr. Sarah Jenkins (Preventive & Pediatric Care)">Dr. Sarah Jenkins — Preventive & Gentle Family Care</option>
+                </select>
+                <div class="lds-select-chevron" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Date Selection Field -->
+            <div class="lds-form-field">
+              <label for="booking-date" class="lds-label">
+                Preferred Date
+                <span class="lds-required" aria-hidden="true">*</span>
+              </label>
+              <div class="lds-input-icon-wrapper">
+                <input 
+                  type="date" 
+                  id="booking-date" 
+                  name="preferred_date" 
+                  class="lds-input" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="booking-date-hint"
+                >
+                <span class="lds-input-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </span>
+              </div>
+              <span id="booking-date-hint" class="lds-field-hint">Studio opens Monday through Saturday.</span>
+              <span id="booking-date-error" class="lds-field-error" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <!-- Time of Day & Time Slot Selection -->
+          <div class="lds-form-field lds-mt-4">
+            <label class="lds-label" id="time-slot-group-label">
+              Available Time Slot
+              <span class="lds-required" aria-hidden="true">*</span>
+            </label>
+            
+            <!-- Time filters -->
+            <div class="lds-time-filters" role="tablist" aria-label="Filter time slots by period of day">
+              <button type="button" class="lds-filter-btn lds-filter-btn--active" data-period="all" role="tab" aria-selected="true">All Slots</button>
+              <button type="button" class="lds-filter-btn" data-period="morning" role="tab" aria-selected="false">Morning (8am-12pm)</button>
+              <button type="button" class="lds-filter-btn" data-period="afternoon" role="tab" aria-selected="false">Afternoon (12pm-4pm)</button>
+              <button type="button" class="lds-filter-btn" data-period="evening" role="tab" aria-selected="false">Evening (4pm-7pm)</button>
+            </div>
+
+            <!-- Time slot chips -->
+            <div class="lds-slot-grid" role="radiogroup" aria-labelledby="time-slot-group-label" id="booking-slot-options">
+              <label class="lds-slot-chip" data-period="morning">
+                <input type="radio" name="time_slot" value="08:30 AM" class="sr-only lds-slot-radio" required>
+                <span class="lds-slot-time">08:30 AM</span>
+                <span class="lds-slot-status">Available</span>
+              </label>
+
+              <label class="lds-slot-chip" data-period="morning">
+                <input type="radio" name="time_slot" value="10:00 AM" class="sr-only lds-slot-radio">
+                <span class="lds-slot-time">10:00 AM</span>
+                <span class="lds-slot-status">Available</span>
+              </label>
+
+              <label class="lds-slot-chip" data-period="morning">
+                <input type="radio" name="time_slot" value="11:30 AM" class="sr-only lds-slot-radio">
+                <span class="lds-slot-time">11:30 AM</span>
+                <span class="lds-slot-status">Popular</span>
+              </label>
+
+              <label class="lds-slot-chip" data-period="afternoon">
+                <input type="radio" name="time_slot" value="01:15 PM" class="sr-only lds-slot-radio">
+                <span class="lds-slot-time">01:15 PM</span>
+                <span class="lds-slot-status">Available</span>
+              </label>
+
+              <label class="lds-slot-chip" data-period="afternoon">
+                <input type="radio" name="time_slot" value="02:45 PM" class="sr-only lds-slot-radio">
+                <span class="lds-slot-time">02:45 PM</span>
+                <span class="lds-slot-status">Available</span>
+              </label>
+
+              <label class="lds-slot-chip" data-period="afternoon">
+                <input type="radio" name="time_slot" value="03:45 PM" class="sr-only lds-slot-radio">
+                <span class="lds-slot-time">03:45 PM</span>
+                <span class="lds-slot-status">Available</span>
+              </label>
+
+              <label class="lds-slot-chip" data-period="evening">
+                <input type="radio" name="time_slot" value="05:15 PM" class="sr-only lds-slot-radio">
+                <span class="lds-slot-time">05:15 PM</span>
+                <span class="lds-slot-status">Popular</span>
+              </label>
+
+              <label class="lds-slot-chip" data-period="evening">
+                <input type="radio" name="time_slot" value="06:00 PM" class="sr-only lds-slot-radio">
+                <span class="lds-slot-time">06:00 PM</span>
+                <span class="lds-slot-status">Available</span>
+              </label>
+            </div>
+            <span id="booking-slot-error" class="lds-field-error" role="alert" aria-live="polite"></span>
+          </div>
+        </fieldset>
+
+        <!-- STEP 3: PATIENT CONTACT & DETAILS -->
+        <fieldset class="lds-form-step">
+          <legend class="lds-step-legend">
+            <span class="lds-step-number" aria-hidden="true">3</span>
+            <span class="lds-step-heading">
+              <span class="lds-step-title">Patient Contact & Information</span>
+              <span class="lds-step-desc">Your confirmation and reminders will be sent to these contact details.</span>
+            </span>
+          </legend>
+
+          <div class="lds-grid lds-grid--2col">
+            <!-- Patient Status -->
+            <div class="lds-form-field lds-grid-col-full">
+              <span class="lds-label" id="patient-type-label">Have you visited Lumen Dental Studio before?</span>
+              <div class="lds-radio-pills" role="radiogroup" aria-labelledby="patient-type-label">
+                <label class="lds-pill-label">
+                  <input type="radio" name="patient_type" value="New Patient" checked class="lds-pill-input">
+                  <span class="lds-pill-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="8.5" cy="7" r="4"></circle>
+                      <line x1="20" y1="8" x2="20" y2="14"></line>
+                      <line x1="23" y1="11" x2="17" y2="11"></line>
+                    </svg>
+                    New Patient
+                  </span>
+                </label>
+                <label class="lds-pill-label">
+                  <input type="radio" name="patient_type" value="Returning Patient" class="lds-pill-input">
+                  <span class="lds-pill-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    Returning Patient
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- First Name -->
+            <div class="lds-form-field">
+              <label for="booking-first-name" class="lds-label">
+                First Name
+                <span class="lds-required" aria-hidden="true">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="booking-first-name" 
+                name="first_name" 
+                class="lds-input" 
+                placeholder="e.g. Maya" 
+                autocomplete="given-name" 
+                required 
+                aria-required="true"
+                aria-describedby="booking-first-name-error"
+              >
+              <span id="booking-first-name-error" class="lds-field-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Last Name -->
+            <div class="lds-form-field">
+              <label for="booking-last-name" class="lds-label">
+                Last Name
+                <span class="lds-required" aria-hidden="true">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="booking-last-name" 
+                name="last_name" 
+                class="lds-input" 
+                placeholder="e.g. Patel" 
+                autocomplete="family-name" 
+                required 
+                aria-required="true"
+                aria-describedby="booking-last-name-error"
+              >
+              <span id="booking-last-name-error" class="lds-field-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="lds-form-field">
+              <label for="booking-email" class="lds-label">
+                Email Address
+                <span class="lds-required" aria-hidden="true">*</span>
+              </label>
+              <div class="lds-input-icon-wrapper">
+                <input 
+                  type="email" 
+                  id="booking-email" 
+                  name="email" 
+                  class="lds-input" 
+                  placeholder="maya.patel@example.com" 
+                  autocomplete="email" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="booking-email-error"
+                >
+                <span class="lds-input-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </span>
+              </div>
+              <span id="booking-email-error" class="lds-field-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="lds-form-field">
+              <label for="booking-phone" class="lds-label">
+                Mobile Phone
+                <span class="lds-required" aria-hidden="true">*</span>
+              </label>
+              <div class="lds-input-icon-wrapper">
+                <input 
+                  type="tel" 
+                  id="booking-phone" 
+                  name="phone" 
+                  class="lds-input" 
+                  placeholder="(415) 555-0199" 
+                  autocomplete="tel" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="booking-phone-error booking-phone-hint"
+                >
+                <span class="lds-input-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </span>
+              </div>
+              <span id="booking-phone-hint" class="lds-field-hint">For appointment SMS reminders & digital check-in.</span>
+              <span id="booking-phone-error" class="lds-field-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Dental Insurance / Payment Method -->
+            <div class="lds-form-field lds-grid-col-full">
+              <label for="booking-insurance" class="lds-label">Dental Insurance / Payment Method</label>
+              <div class="lds-select-wrapper">
+                <select id="booking-insurance" name="insurance" class="lds-select">
+                  <option value="Delta Dental Premier / PPO">Delta Dental Premier / PPO</option>
+                  <option value="Cigna Dental Network">Cigna Dental Network</option>
+                  <option value="MetLife Preferred Dentist">MetLife Preferred Dentist</option>
+                  <option value="Aetna Dental PPO">Aetna Dental PPO</option>
+                  <option value="Guardian Dental">Guardian Dental</option>
+                  <option value="Lumen Studio Membership (No Insurance)">Lumen Studio Membership Plan (No Insurance)</option>
+                  <option value="Direct Self-Pay / HSA / FSA">Direct Self-Pay / HSA / FSA Card</option>
+                  <option value="Other / Out of Network">Other Insurance / Check Coverage Upon Arrival</option>
+                </select>
+                <div class="lds-select-chevron" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Special Accommodations / Dental Anxiety Notes -->
+            <div class="lds-form-field lds-grid-col-full">
+              <label for="booking-notes" class="lds-label">
+                Comfort Preferences & Notes <span class="lds-optional">(Optional)</span>
+              </label>
+              <textarea 
+                id="booking-notes" 
+                name="notes" 
+                class="lds-textarea" 
+                rows="3" 
+                placeholder="Let us know if you experience dental anxiety, prefer noise-canceling headphones, need wheelchair access, or have specific medical considerations..."
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Consent & Terms Checkbox -->
+          <div class="lds-consent-group">
+            <label class="lds-checkbox-label" for="booking-consent">
+              <input 
+                type="checkbox" 
+                id="booking-consent" 
+                name="consent" 
+                class="lds-checkbox" 
+                required 
+                aria-required="true"
+                aria-describedby="booking-consent-error"
+              >
+              <span class="lds-checkbox-custom" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span class="lds-checkbox-text">
+                I agree to the <span class="lds-link-text">24-hour cancellation policy</span> and consent to receiving appointment updates and digital check-in details via SMS and email.
+              </span>
+            </label>
+            <span id="booking-consent-error" class="lds-field-error" role="alert" aria-live="polite"></span>
+          </div>
+        </fieldset>
+
+        <!-- Submit Button Row -->
+        <div class="lds-booking-submit-row">
+          <button type="submit" id="booking-submit-btn" class="lds-btn lds-btn--primary lds-btn--large">
+            <span class="lds-btn__text">Confirm Appointment Request</span>
+            <span class="lds-btn__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+            <span class="lds-spinner" aria-hidden="true"></span>
+          </button>
+          
+          <div class="lds-guarantee-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>256-bit encrypted health data privacy • Zero hidden fees</span>
+          </div>
+        </div>
+      </form>
+
+      <!-- SUCCESS CONFIRMATION MODAL / STATE (Accessible Dynamic Card) -->
+      <div id="booking-success-view" class="lds-success-view" hidden aria-live="polite" role="region" aria-label="Appointment Confirmation">
+        <div class="lds-success-card">
+          <div class="lds-success-badge" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+
+          <h3 class="lds-success-title">Your Appointment Is Requested!</h3>
+          <p class="lds-success-subtitle">
+            A confirmation email and SMS have been sent. Our patient coordinator will confirm your exact slot shortly.
+          </p>
+
+          <!-- Appointment Summary Box -->
+          <div class="lds-summary-box">
+            <div class="lds-summary-box__header">
+              <span class="lds-summary-label">Reservation Reference</span>
+              <strong id="summary-booking-id" class="lds-summary-code">LDS-2026-XXXX</strong>
+            </div>
+
+            <dl class="lds-summary-details">
+              <div class="lds-summary-item">
+                <dt>Patient</dt>
+                <dd id="summary-patient-name">—</dd>
+              </div>
+              <div class="lds-summary-item">
+                <dt>Treatment</dt>
+                <dd id="summary-service">—</dd>
+              </div>
+              <div class="lds-summary-item">
+                <dt>Doctor / Specialist</dt>
+                <dd id="summary-provider">—</dd>
+              </div>
+              <div class="lds-summary-item">
+                <dt>Date & Time</dt>
+                <dd id="summary-datetime" class="lds-highlight-text">—</dd>
+              </div>
+              <div class="lds-summary-item">
+                <dt>Studio Location</dt>
+                <dd>742 Evergreen Promenade, Suite 300, San Francisco</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Studio Visit Prep Guide -->
+          <div class="lds-prep-guide">
+            <h4 class="lds-prep-guide__title">Preparing for your studio visit</h4>
+            <ul class="lds-prep-guide__list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Complete your digital health history form in your confirmation email prior to arrival.</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Enjoy complimentary herbal tea, chilled sparkling water, and noise-canceling headphones in our relaxation lounge.</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Validated garage parking available directly underneath Suite 300.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="lds-success-actions">
+            <button type="button" id="btn-add-calendar" class="lds-btn lds-btn--secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Add to Calendar (.ics)</span>
+            </button>
+
+            <button type="button" id="btn-book-another" class="lds-btn lds-btn--outline">
+              <span>Book Another Appointment</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
